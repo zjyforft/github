@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!-- 全局默认配置信息 -->
+<defaults>
+
+    <!--中心的类型和实现类的对应关系 -->
+    <center>
+        <property name="BillId:KeyNum" value="com.ai.common.center.csf.BillIdCenterImpl"/>
+        <property name="AcctId" value="com.ai.common.center.csf.AcctIdCenterImpl"/>
+        <property name="CustId:CUSTOMER_ID" value="com.ai.common.center.csf.CustIdCenterImpl"/>
+        <property name="UserId" value="com.ai.common.center.csf.UserIdCenterImpl"/>
+        <property name="RegionId" value="com.ai.common.center.csf.RegionIdCenterImpl"/>
+        <property name="OrderCode" value="com.ai.common.center.csf.OrderCodeCenterImpl"/>
+        <property name="OrderId" value="com.ai.common.center.csf.OrderIdCenterImpl"/>
+    </center>
+
+    <!--默认代理调用方式.默认采用pojo的模式进行调用，采用的实现类为配置的实现类 -->
+    <proxy invoke="pojo" type="primitive">
+        <clazz name="com.ai.appframe2.complex.service.impl.LocalServiceInvokeImpl"/>
+    </proxy>
+
+    <!--默认事务信息.默认采用Required的方式进行事务操作，采用的实现类为配置的实现类 -->
+    <transaction type="Required">
+        <!--<clazz name="com.ai.appframe2.complex.transaction.impl.LocalTransactionImpl"/> -->
+        <clazz name="com.ai.appframe2.complex.transaction.impl.LocalMutilTransactionImpl"/>
+        <!--<listener name="com.ai.appframe2.complex.transaction.listener.TestListenerImpl"/> -->
+        <!--映射每个服务模块对应的事务数据源，可以具体到类名 -->
+        <mapping>
+            <!--平台自带 -->
+            <property name="com.ai.appframe2.complex.self.service.base" value="base"/>
+            <property name="com.ai.appframe2.complex.self.service.check" value="base"/>
+
+            <!--平台扩展 -->
+            <property name="com.asiainfo.appframe.ext.exeframe" value="base"/>
+
+            <!--secframe -->
+            <property name="com.ai.secframe" value="sec"/>
+            <property name="com.ai.frame" value="sec"/>
+
+            <!--crm业务配置 -->
+            <property name="com.asiainfo.crm.common.service.base" value="base"/>
+            <property name="com.asiainfo.crm.common.service.res" value="res"/>
+            <property name="com.asiainfo.crm.example.so" value="so{CENTER}"/>
+
+            <!-- demo -->
+            <property name="com.asiainfo.crm.demo" value="base"/>
+        </mapping>
+    </transaction>
+
+    <!--默认数据源信息 -->
+    <datasource>
+        <clazz name="com.ai.appframe2.complex.datasource.impl.LocalMutilDataSourceImpl">
+            <property name="tableName" value="cfg_db_acct"/>
+        </clazz>
+
+        <!--根据base取数据库配置，然后以本配置中的覆盖除base以外的连接池的配置 -->
+        <!--默认 type=dbcp db=oracle -->
+        <pool name="base" primary="true" type="dbcp" db="oracle">
+            <property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
+
+            <!--开发环境 -->
+            <!--<property name="url" value="jdbc:oracle:thin:@20.26.11.4:1521:CSHP01"/>-->
+            <!--<property name="username" value="base"/>-->
+            <!--<property name="password" value="{RC2}bFmf3Q=="/>-->
+
+            <!--测试环境    -->
+            <property name="url" value="jdbc:oracle:thin:@20.26.19.93:1521:CSHP93"/>
+            <property name="username" value="base"/>
+            <property name="password" value="{RC2}9rlcUAprYT4="/>
+
+            <property name="initialSize" value="0"/>
+            <property name="maxActive" value="2"/>
+            <property name="maxIdle" value="2"/>
+        </pool>
+
+
+        <pool name="so1" init="true" template="so{CENTER}">
+            <property name="initialSize" value="5"/>
+            <property name="maxActive" value="5"/>
+            <property name="maxIdle" value="5"/>
+            <property name="maxWait" value="2000"/>
+            <!--连接泄漏检查,180秒后回收物理数据库连接到数据库中 -->
+            <property name="removeAbandoned" value="true"/>
+            <property name="removeAbandonedTimeout" value="180"/>
+            <property name="logAbandoned" value="true"/>
+            <!--连接池有效性检查
+            <property name="validationQuery" value="select 1 from dual" /> -->
+            <property name="testWhileIdle" value="true"/>
+            <property name="testOnBorrow" value="false"/>
+            <property name="testOnReturn" value="false"/>
+            <!--最多20秒检查到连接失效 -->
+            <property name="timeBetweenEvictionRunsMillis" value="30000"/>
+            <property name="numTestsPerEvictionRun" value="2"/>
+        </pool>
+
+        <pool name="so2" init="true" template="so{CENTER}">
+            <property name="initialSize" value="0"/>
+            <property name="maxActive" value="2"/>
+            <property name="maxIdle" value="2"/>
+            <property name="maxWait" value="2000"/>
+        </pool>
+
+        <pool name="so3" init="true" template="so{CENTER}">
+            <property name="initialSize" value="0"/>
+            <property name="maxActive" value="2"/>
+            <property name="maxIdle" value="2"/>
+            <property name="maxWait" value="2000"/>
+        </pool>
+
+        <pool name="so4" init="true" template="so{CENTER}">
+            <property name="initialSize" value="0"/>
+            <property name="maxActive" value="2"/>
+            <property name="maxIdle" value="2"/>
+            <property name="maxWait" value="2000"/>
+        </pool>
+
+        <pool name="ams1" init="true" template="ams{CENTER}">
+            <property name="initialSize" value="0"/>
+            <property name="maxActive" value="2"/>
+            <property name="maxIdle" value="2"/>
+            <property name="maxWait" value="2000"/>
+        </pool>
+
+        <pool name="ams2" init="true" template="ams{CENTER}">
+            <property name="initialSize" value="0"/>
+            <property name="maxActive" value="2"/>
+            <property name="maxIdle" value="2"/>
+            <property name="maxWait" value="2000"/>
+        </pool>
+
+        <pool name="ams3" init="true" template="ams{CENTER}">
+            <property name="initialSize" value="0"/>
+            <property name="maxActive" value="2"/>
+            <property name="maxIdle" value="2"/>
+            <property name="maxWait" value="2000"/>
+        </pool>
+
+        <pool name="ams4" init="true" template="ams{CENTER}">
+            <property name="initialSize" value="0"/>
+            <property name="maxActive" value="2"/>
+            <property name="maxIdle" value="2"/>
+            <property name="maxWait" value="2000"/>
+        </pool>
+
+        <pool name="channel" init="true">
+            <property name="initialSize" value="0"/>
+            <property name="maxActive" value="2"/>
+            <property name="maxIdle" value="2"/>
+            <property name="maxWait" value="2000"/>
+        </pool>
+
+        <pool name="res" init="true">
+            <property name="initialSize" value="0"/>
+            <property name="maxActive" value="2"/>
+            <property name="maxIdle" value="2"/>
+            <property name="maxWait" value="2000"/>
+        </pool>
+
+        <pool name="sec" init="true">
+            <property name="initialSize" value="0"/>
+            <property name="maxActive" value="2"/>
+            <property name="maxIdle" value="2"/>
+            <property name="maxWait" value="2000"/>
+        </pool>
+
+        <!--映射每个DAO模块对应的操作数据源 -->
+        <mapping>
+            <!--平台自带 -->
+            <property name="com.ai.appframe2.complex.self.dao.base" value="base"/>
+            <property name="com.ai.appframe2.complex.self.service.check" value="base"/>
+            <property name="com.ai.common.dao.base" value="base"/>
+            <property name="com.wanzl.dao" value="base"/>
+
+            <!--平台扩展 -->
+            <property name="com.asiainfo.appframe.ext.exeframe" value="base"/>
+
+            <!--secframe -->
+            <property name="com.ai.secframe" value="sec"/>
+            <property name="com.ai.frame" value="sec"/>
+
+            <!--crm业务配置 -->
+            <property name="com.asiainfo.crm.common.dao.base" value="base"/>
+            <property name="com.asiainfo.crm.common.dao.res" value="res"/>
+            <property name="com.asiainfo.crm.example.so" value="so{CENTER}"/>
+
+            <!-- demo -->
+            <property name="com.asiainfo.crm.demo" value="base"/>
+        </mapping>
+    </datasource>
+
+    <!--包含的服务配置文件 -->
+    <!--权限 -->
+    <include type="sv" classpath="system/service/secframe-service.xml"/>
+    <!--<include type="dao" classpath="system/service/secframe-dao.xml"/>-->
+    <!--平台 -->
+    <include type="sv" classpath="system/service/appframe-service.xml"/>
+
+</defaults>

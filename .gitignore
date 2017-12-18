@@ -1,0 +1,13 @@
+classes
+.classpath
+.project
+.settings
+.idea
+*.iml
+.metadata
+.studio
+.recommenders
+.log
+*AIProcess.java
+*AIProcess.class
+/target/

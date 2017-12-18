@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysbolist>
+  <sysbo datasource="base" name="BOTempTestUser" mainattr="ID">
+    <mapingenty type="table">TEST_USER_ZHENGJY</mapingenty>
+    <datafilter />
+    <attrlist>
+      <attr floatlength="0" name="ID" maxlength="20" datatype="Long" type="PK">
+        <mapingcol datatype="NUMBER">ID</mapingcol>
+      </attr>
+      <attr floatlength="0" name="NAME" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">NAME</mapingcol>
+      </attr>
+      <attr floatlength="0" name="AGE" maxlength="20" datatype="Long" type="COL">
+        <mapingcol datatype="NUMBER">AGE</mapingcol>
+      </attr>
+      <attr floatlength="0" name="SEX" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">SEX</mapingcol>
+      </attr>
+      <attr floatlength="0" name="TEL" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">TEL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="MAIL" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">MAIL</mapingcol>
+      </attr>
+      <attr floatlength="0" name="QQ" maxlength="20" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">QQ</mapingcol>
+      </attr>
+      <attr floatlength="0" name="ADDR" maxlength="50" datatype="String" type="COL">
+        <mapingcol datatype="VARCHAR2">ADDR</mapingcol>
+      </attr>
+      <attr floatlength="0" name="BIRTHDAY" maxlength="20" datatype="DateTime" type="COL">
+        <mapingcol datatype="DATE">BIRTHDAY</mapingcol>
+      </attr>
+    </attrlist>
+    <relationlist />
+    <oplist />
+  </sysbo>
+</sysbolist>

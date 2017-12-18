@@ -1,0 +1,52 @@
+<mbeans>
+	<!-- -->
+	<mbean desc="JVM5Monitor" enable="true" name="JVM5MonitorAgent:name=JVM5Monitor" interfacename="com.ai.appframe2.complex.mbean.standard.jvm5.JVM5MonitorMBean"
+		classname="com.ai.appframe2.complex.mbean.standard.jvm5.JVM5Monitor" timeout="100" />
+
+	<!--日志 -->
+	<mbean desc="Log4jCategory" enable="true" name="Log4jCategoryAgent:name=Log4jCategory" interfacename="com.ai.appframe2.complex.mbean.standard.log4j.Log4jCategory"
+		classname="com.ai.appframe2.complex.mbean.standard.log4j.Log4jCategory" timeout="100" />
+
+	<mbean desc="AppTraceMonitor" enable="true" name="AppTraceMonitorMBean:name=AppTraceMonitor"
+		interfacename="com.ai.appframe2.complex.mbean.standard.trace.AppTraceMonitorMBean" classname="com.ai.appframe2.complex.mbean.standard.trace.AppTraceMonitor"
+		timeout="100" />
+
+	<mbean desc="WebTraceMonitor" enable="true" name="WebTraceMonitorMBean:name=WebTraceMonitor"
+		interfacename="com.ai.appframe2.complex.mbean.standard.trace.WebTraceMonitorMBean" classname="com.ai.appframe2.complex.mbean.standard.trace.WebTraceMonitor"
+		timeout="100" />
+
+	<mbean desc="ActionMonitor" enable="true" name="ActionMonitorMBean:name=ActionMonitor"
+		interfacename="com.ai.appframe2.complex.mbean.standard.action.ActionMonitorMBean" classname="com.ai.appframe2.complex.mbean.standard.action.ActionMonitor"
+		timeout="100" />
+
+	<mbean desc="CacheMonitor" enable="true" name="CacheMonitorMBean:name=CacheMonitor" interfacename="com.ai.appframe2.complex.mbean.standard.cache.CacheMonitorMBean"
+		classname="com.ai.appframe2.complex.mbean.standard.cache.CacheMonitor" timeout="100" />
+
+	<mbean desc="SQLMonitor" enable="true" name="SQLMonitorMBean:name=SQLMonitor" interfacename="com.ai.appframe2.complex.mbean.standard.sql.SQLMonitorMBean"
+		classname="com.ai.appframe2.complex.mbean.standard.sql.SQLMonitor" timeout="100" />
+
+	<mbean desc="SVMethodMonitor" enable="true" name="SVMethodMonitorMBean:name=SVMethodMonitor"
+		interfacename="com.ai.appframe2.complex.mbean.standard.sv.SVMethodMonitorMBean" classname="com.ai.appframe2.complex.mbean.standard.sv.SVMethodMonitor"
+		timeout="100" />
+
+	<mbean desc="SystemMonitorMBean" enable="true" name="SystemMonitorMBean:name=SystemMonitor"
+		interfacename="com.ai.appframe2.complex.mbean.standard.system.SystemMonitorMBean" classname="com.ai.appframe2.complex.mbean.standard.system.SystemMonitor"
+		timeout="100" />
+
+	<mbean desc="ServiceControlMBean" enable="true" name="ServiceControlMBean:name=ServiceControl"
+		interfacename="com.ai.appframe2.complex.mbean.standard.sc.ServiceControlMBean" classname="com.ai.appframe2.complex.mbean.standard.sc.ServiceControl"
+		timeout="100" />
+
+	<mbean desc="ClientControlMBean" enable="true" name="ClientControlMBean:name=ClientControl"
+		interfacename="com.ai.appframe2.complex.mbean.standard.cc.ClientControlMBean" classname="com.ai.appframe2.complex.mbean.standard.cc.ClientControl"
+		timeout="100" />
+
+	<mbean desc="TransactionMonitorMBean" enable="true" name="TransactionMonitorMBean:name=TransactionMonitor"
+		interfacename="com.ai.appframe2.complex.mbean.standard.tm.TransactionMonitorMBean" classname="com.ai.appframe2.complex.mbean.standard.tm.TransactionMonitor"
+		timeout="100" />
+
+	<mbean desc="DataSourceMonitorMBean" enable="true" name="DataSourceMonitorMBean:name=DataSourceMonitor"
+		interfacename="com.ai.appframe2.complex.mbean.standard.datasource.DataSourceMonitorMBean" classname="com.ai.appframe2.complex.mbean.standard.datasource.DataSourceMonitor"
+		timeout="100" />
+
+</mbeans>

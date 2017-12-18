@@ -1,0 +1,1159 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.asiainfo.crm</groupId>
+    <artifactId>appframe-demo</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>demo-pojo</module>
+        <module>demo-dao</module>
+        <module>demo-config</module>
+        <module>demo-business</module>
+    </modules>
+    <name>appframe-demo Maven Webapp</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <project.build.sourceEncoding>
+            UTF-8
+        </project.build.sourceEncoding>
+    </properties>
+    
+    <build>
+        <finalName>appframe-demo</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>test</id>
+            <name>test</name>
+            <url>
+                http://10.70.181.10:8081/nexus/content/groups/public
+            </url>
+            <releases>
+                <updatePolicy>always</updatePolicy>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <updatePolicy>always</updatePolicy>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+
+    <dependencies>
+
+        <!--***********************测试相关的依�?start*********************** -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.3</version>
+        </dependency>
+        <!--***********************测试相关的依赖end*********************** -->
+
+        <!--***********************消息中间件依赖start*********************** -->
+        <dependency>
+            <groupId>com.asiainfo.platform.msg</groupId>
+            <artifactId>msgframe-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.platform.msg</groupId>
+            <artifactId>msgframe-consumer</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.platform.msg</groupId>
+            <artifactId>msgframe-producer</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.platform.msg</groupId>
+            <artifactId>msgframe-extend</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.crm.apache</groupId>
+            <artifactId>activemq-client</artifactId>
+            <version>5.10.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.crm.apache</groupId>
+            <artifactId>geronimo-j2ee-management_1.1_spec</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>hawbuf</artifactId>
+            <version>1.9</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>jms</artifactId>
+            <version>1.1</version>
+        </dependency>
+        <!--***********************消息中间件依赖end*********************** -->
+
+        <!--***********************apche相关的依�?start*********************** -->
+        <!--
+        <dependency>
+            <groupId>com.asiainfo.crm.apache</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.0</version>
+        </dependency>
+        -->
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.8.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.apache</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.3</version>
+        </dependency>
+
+        <!--
+        <dependency>
+            <groupId>com.asiainfo.crm.apache</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.0</version>
+        </dependency>
+        -->
+
+        <dependency>
+            <groupId>com.asiainfo.crm.apache</groupId>
+            <artifactId>commons-configuration</artifactId>
+            <version>1.8</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.apache</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>1.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.apache</groupId>
+            <artifactId>commons-digester</artifactId>
+            <version>1.7</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.crm.apache</groupId>
+            <artifactId>commons-discovery</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.apache</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.apache</groupId>
+            <artifactId>commons-httpclient</artifactId>
+            <version>3.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.apache</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.apache</groupId>
+            <artifactId>commons-jexl</artifactId>
+            <version>2.0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.apache</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.apache</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.apache</groupId>
+            <artifactId>commons-net</artifactId>
+            <version>1.4.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.crm.apache</groupId>
+            <artifactId>commons-pool</artifactId>
+            <version>1.5.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.apache</groupId>
+            <artifactId>ecs</artifactId>
+            <version>1.4.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.apache</groupId>
+            <artifactId>geronimo-stax-api_spec</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.apache</groupId>
+            <artifactId>jakarta-oro</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.apache</groupId>
+            <artifactId>jakarta-regexp</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.appframe</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.apache</groupId>
+            <artifactId>ooxml-schemas</artifactId>
+            <version>1.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.apache</groupId>
+            <artifactId>poi-final</artifactId>
+            <version>2.5.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.apache</groupId>
+            <artifactId>poi_all</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.apache</groupId>
+            <artifactId>velocity-rc1</artifactId>
+            <version>1.4</version>
+            <classifier>rc1</classifier>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.apache</groupId>
+            <artifactId>xmlbeans</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.apache</groupId>
+            <artifactId>zookeeper</artifactId>
+            <version>3.4.6</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.crm.apache</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.crm.apache</groupId>
+            <artifactId>commons-pool2-2.4.2</artifactId>
+            <version>2.4.2</version>
+        </dependency>
+        <!--***********************apche相关的依�? end *********************** -->
+
+        <!--***********************appframe相关的依�?start*********************** -->
+        <dependency>
+            <groupId>com.asiainfo.crm.appframe</groupId>
+            <artifactId>appframe</artifactId>
+            <version>1.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.appframe</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.appframe</groupId>
+            <artifactId>ailogger</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.appframe</groupId>
+            <artifactId>aischeduler</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.appframe</groupId>
+            <artifactId>appframe-extframe-msg</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.appframe</groupId>
+            <artifactId>appframe_ext_exeframe</artifactId>
+            <version>1.0.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.appframe</groupId>
+            <artifactId>appframe_ext_exeframe_remote_client</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.appframe</groupId>
+            <artifactId>appframe_ext_flyingclient</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.appframe</groupId>
+            <artifactId>appframe_ext_flyingserver</artifactId>
+            <version>1.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.appframe</groupId>
+            <artifactId>appframe_ext_memcached</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.appframe</groupId>
+            <artifactId>bce</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.appframe</groupId>
+            <artifactId>cometd-server</artifactId>
+            <version>6.1.26</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.platform.comframe</groupId>
+            <artifactId>comframe</artifactId>
+            <version>3.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.appframe</groupId>
+            <artifactId>jetty-util</artifactId>
+            <version>6.1.26</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.appframe</groupId>
+            <artifactId>jetty-util5</artifactId>
+            <version>6.1.26</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.appframe</groupId>
+            <artifactId>jetty</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.appframe</groupId>
+            <artifactId>omframe</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <!--        <dependency>
+                <groupId>com.asiainfo.crm.appframe</groupId>
+                <artifactId>pce</artifactId>
+                <version>1.0</version>
+                </dependency>-->
+        <dependency>
+            <groupId>com.asiainfo.crm.yw</groupId>
+            <artifactId>pce</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.appframe</groupId>
+            <artifactId>pce_studio_fs</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.appframe</groupId>
+            <artifactId>rowset</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.appframe</groupId>
+            <artifactId>secframe</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.common</groupId>
+            <artifactId>sec-inter</artifactId>
+            <version>1.6</version>
+        </dependency>
+
+        <!--
+         <dependency>
+             <groupId>com.asiainfo.crm.appframe</groupId>
+             <artifactId>appframe-exeframe-cache</artifactId>
+             <version>6.3</version>
+         </dependency>
+         -->
+        <dependency>
+            <groupId>com.asiainfo.crm.appframe</groupId>
+            <artifactId>aicache</artifactId>
+            <version>1.1-SNAPSHOT</version>
+        </dependency>
+        <!-- CSF JAR BEGING -->
+        <dependency>
+            <groupId>com.asiainfo.crm.sms</groupId>
+            <artifactId>common-sms</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.common</groupId>
+            <artifactId>aicommon-csf</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.common</groupId>
+            <artifactId>aicommon-msgconsume-ex</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.platform.csf</groupId>
+            <artifactId>csf-client</artifactId>
+            <version>1.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.platform.csf</groupId>
+            <artifactId>csf-common</artifactId>
+            <version>1.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.platform.csf</groupId>
+            <artifactId>csf-client-extend</artifactId>
+            <version>1.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.platform.csf</groupId>
+            <artifactId>csf-executor</artifactId>
+            <version>1.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.platform.csf</groupId>
+            <artifactId>csf-db</artifactId>
+            <version>1.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.platform.csf</groupId>
+            <artifactId>csf-protocol-remote</artifactId>
+            <version>1.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.platform.csf</groupId>
+            <artifactId>csf-server</artifactId>
+            <version>1.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.platform.csf</groupId>
+            <artifactId>csf-servicerouter</artifactId>
+            <version>1.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.platform.csf</groupId>
+            <artifactId>csf-zookeeperclient</artifactId>
+            <version>1.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.platform.csf</groupId>
+            <artifactId>ta-demo</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.platform.csf</groupId>
+            <artifactId>csf-mask</artifactId>
+            <version>1.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.platform.csf</groupId>
+            <artifactId>csf-protocol-http-server</artifactId>
+            <version>1.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>curator-client</artifactId>
+            <version>2.10.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>curator-framework</artifactId>
+            <version>2.10.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>guava</artifactId>
+            <version>16.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>objenesis</artifactId>
+            <version>2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>2.9.0</version>
+        </dependency>
+        <!-- CSF JAR END -->
+        <!--***********************appframe相关的依�? end*********************** -->
+
+        <!--***********************other相关的依�? start*********************** -->
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>3des</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>Biokey</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>CipherUtil</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>IKAnalyzer</artifactId>
+            <version>3.2.8</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>InfosecCrypto_Java</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>QuickServer</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>XmlSchema</artifactId>
+            <version>1.4.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>ase-client</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>aseclient</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>axiom-api</artifactId>
+            <version>1.2.12</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>axiom-impl</artifactId>
+            <version>1.2.12</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>axis</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>axis2-adb</artifactId>
+            <version>1.5.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>axis2-kernel</artifactId>
+            <version>1.5.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>axis2-transport-http</artifactId>
+            <version>1.5.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>axis2-transport-local</artifactId>
+            <version>1.5.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>batik-all</artifactId>
+            <version>1.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>bcmail-jdk15on</artifactId>
+            <version>1.5.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>bcpkix-jdk15on</artifactId>
+            <version>1.5.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>bcprov-ext-jdk15on</artifactId>
+            <version>1.5.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>1.5.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>borlandxml</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>bsh</artifactId>
+            <version>1.3.0</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>castor-xml</artifactId>
+            <version>1.0.1</version>
+            <classifier>xml</classifier>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>coherence</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>concurrent</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>corba_base</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>dr</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>ehcache</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>ezmorph</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>fileupload-ext</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>fpmatch</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>htmlparser</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>httpcore</artifactId>
+            <version>4.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>itruscom</artifactId>
+            <version>1.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>jackson-all</artifactId>
+            <version>1.9.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>javassist</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>jaxrpc</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>jboss-remoting</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>jcommon</artifactId>
+            <version>1.0.13</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>jdom</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>jetty-util</artifactId>
+            <version>6.1.16</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>jetty</artifactId>
+            <version>6.1.16</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>jfreechart</artifactId>
+            <version>1.0.10</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>jgraph</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>jline</artifactId>
+            <version>0.9.94</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>1.5.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>js</artifactId>
+            <version>1.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>jsch</artifactId>
+            <version>0.1.51</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>json-lib</artifactId>
+            <version>2.4</version>
+            <classifier>jdk15</classifier>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>jxl</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>lucene-core</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>mvel14</artifactId>
+            <version>1.2.21</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>neethi</artifactId>
+            <version>2.0.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>netty-Final</artifactId>
+            <version>3.7.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>openclient</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>pinyin4j</artifactId>
+            <version>2.5.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.7</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.7</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>quartz-all</artifactId>
+            <version>1.6.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>remotecommon</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>saaj</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>sign</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>smart</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>srvlog_client</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>srvlogclient</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>taobao-express</artifactId>
+            <version>3.0.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>w3c_eval</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>wsdl4j</artifactId>
+            <version>1.5.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>xml2html</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>xmlPaser_TSCD</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>xom</artifactId>
+            <version>1.2.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>xpp3_min</artifactId>
+            <version>1.4.4c</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>xstream</artifactId>
+            <version>1.3.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>zjsso_client</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <!--***********************other相关的依�? end*********************** -->
+
+        <!--***********************runtime相关的依�? start*********************** -->
+        <dependency>
+            <groupId>com.asiainfo.crm.runtime</groupId>
+            <artifactId>ant-jsch</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.crm.runtime</groupId>
+            <artifactId>ant</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.crm.runtime</groupId>
+            <artifactId>j2ee</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.crm.runtime</groupId>
+            <artifactId>jbcl</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.crm.runtime</groupId>
+            <artifactId>mx4j-all</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.crm.runtime</groupId>
+            <artifactId>ojdbc</artifactId>
+            <version>5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.crm.runtime</groupId>
+            <artifactId>xercesImpl</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.asiainfo.crm.runtime</groupId>
+            <artifactId>xmlParserAPIs</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <!--***********************runtime相关的依�? end*********************** -->
+
+        <!-- 跟踪日志, log4x和其依赖 -->
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>log4x</artifactId>
+            <version>2.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>0.8.2.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>kafka_2.11</artifactId>
+            <version>0.8.2.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>2.11.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.other</groupId>
+            <artifactId>metrics-core</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.asiainfo.crm.runtime</groupId>
+            <artifactId>tool</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.sonar.runner</groupId>
+            <artifactId>sonar-runner-dist</artifactId>
+            <version>2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.HdrHistogram</groupId>
+            <artifactId>HdrHistogram</artifactId>
+            <version>2.1.9</version>
+        </dependency>
+        <dependency>
+            <groupId>com.hystrix.core</groupId>
+            <artifactId>hystrix-core</artifactId>
+            <version>1.5.5</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.7.5</version>
+        </dependency>
+        <dependency>
+            <groupId>com.rxjava</groupId>
+            <artifactId>rxjava</artifactId>
+            <version>1.1.8</version>
+        </dependency>
+        <dependency>
+            <groupId>com.javax.servlet</groupId>
+            <artifactId>javax-servlet</artifactId>
+            <version>2.5</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.asiainfo.center.account</groupId>
+            <artifactId>mdbClient</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <!-- 跟踪日志, log4x和其依赖 end -->
+
+        <!-- 消息发�?jar包依�?-->
+        <dependency>
+            <groupId>com.asiainfo.platform.msg</groupId>
+            <artifactId>msgframe-producer-extend</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+    </dependencies>
+
+</project>
