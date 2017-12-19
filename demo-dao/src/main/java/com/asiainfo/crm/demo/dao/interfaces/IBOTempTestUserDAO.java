@@ -4,9 +4,7 @@ import com.ai.appframe2.util.criteria.Criteria;
 import resource.so.bo.BOTempTestUserBean;
 
 /**
- * 临时测试类
- *
- * @author wangwei
+ * Dao接口
  */
 public interface IBOTempTestUserDAO {
 

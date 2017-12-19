@@ -6,7 +6,7 @@ import resource.so.ivalues.IBOTempTestUserValue;
 import java.sql.Timestamp;
 
 /**
- * 用户业务实现类
+ * 用户业务接口
  */
 public interface IBOTempTestUserSV {
 

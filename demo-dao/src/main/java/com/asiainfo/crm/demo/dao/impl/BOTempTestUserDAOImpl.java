@@ -17,10 +17,6 @@ public class BOTempTestUserDAOImpl implements IBOTempTestUserDAO {
      */
     @Override
     public void addUsers(IBOTempTestUserValue iboTempTestUserValue) throws Exception {
-//        IdGenerator idGenerator = ServiceManager.getIdGenerator();
-//        long id = idGenerator.getNewId("TEST_USER_WANGWI").longValue();
-//        System.out.println("id = " + id);
-//        iboTempTestUserValue.setId(id);
         if (iboTempTestUserValue.isNew()) {
             iboTempTestUserValue.setId(BOTempTestUserEngine.getNewId().longValue());
         }
