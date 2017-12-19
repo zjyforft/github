@@ -85,7 +85,7 @@ public class BOTempTestUserSVImpl implements IBOTempTestUserSV {
         this.getIBOTempTestUserDAO().updateUser((IBOTempTestUserValue) boTempTestUserBean);
         // TODO
     }
-
+//by zjy
 
     /**
      * 查询用户
